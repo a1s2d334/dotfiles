@@ -1,0 +1,15 @@
+.Xauthority
+.bash*
+.cache
+.fehbg
+.mozilla
+.oh-my-zsh
+.viminfo
+.zcompdump*
+.zsh_history
+.zshrc
+.config/dconf
+.config/ibus
+.local
+Downloads
+Pictures
