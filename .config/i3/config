@@ -44,17 +44,17 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#073642' -sf '#EEEEEE' -fn 'monospace-10' -p 'dmenu prompt &gt;'"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -63,10 +63,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -75,7 +75,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -104,8 +104,8 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
+set $ws3 "Firefox"
+set $ws4 "Steam"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -178,6 +178,7 @@ bar {
         status_command ~/.config/i3/status.sh
 	colors {
 		background #073642
+		focused_workspace  #9CACBA #8bb5ac #FFFFFF
 	}
 }
 
@@ -193,7 +194,10 @@ smart_gaps on
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
 
-bindsym $mod+Control+j resize shrink width 10 px or 10 ppt
-bindsym $mod+Control+k resize grow height 10 px or 10 ppt
-bindsym $mod+Control+l resize shrink height 10 px or 10 ppt
-bindsym $mod+Control+semicolon resize grow width 10 px or 10 ppt
+bindsym $mod+Control+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+j resize grow height 10 px or 10 ppt
+bindsym $mod+Control+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+l resize grow width 10 px or 10 ppt
+
+assign [class="Steam"] Steam
+assign [class="Firefox"] Firefox

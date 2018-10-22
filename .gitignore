@@ -13,3 +13,7 @@
 .local
 Downloads
 Pictures
+.steam*
+.nv
+.pki
+.pulse-cookie
